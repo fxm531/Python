@@ -1,0 +1,12 @@
+def move(n,a,b,c): 
+    if n == 1:
+        print(a,'-->',c)
+        return None
+    move(n-1,a,c,b) #将n-1个塔从a通过c移动到b
+    move(1,a,b,c)   #将a剩下的移动到c
+    move(n-1,b,a,c) #将b上的n-1个塔通过a移动到c,剩下的交给递归实现了
+a="A"
+b='B'
+c='C'
+n=3
+move(n,a,b,c)
